@@ -88,8 +88,24 @@ forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --p
 
 //never use .env instead
 cast wallet import defaultKey --interactive
+cast wallet list
+
+forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --account defaultKey --sender 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 --broadcast -vvvv
+
 
 
 //to remove the private key from the history 
 History -c  //create your own blockchain npc to run and deploy code anvil  
+
+
+//to deploy on testnet 
+source .env
+forge script script/DeploySimpleStorage.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY_SEPOLIA --broadcast
+
+
+//verify the smart contract
+
+
+//auto format
+forge fmt
 ```
